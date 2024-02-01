@@ -7,6 +7,7 @@ import formatsRouter from './routes/formats';
 
 dotenv.config();
 
+const chalk = require('chalk');
 const app = express();
 const port = process.env.PORT || 3000;
 
@@ -17,9 +18,9 @@ app.use('/authors', authorsRouter);
 app.use('/formats', formatsRouter);
 
 sequelize.sync({ force: true }).then(() => {
-  console.log('Database synced');
+  console.log(chalk.blue('Database synced'));
   app.listen(port, () => {
-    console.log(`Server running on http://localhost:${port}`);
+    console.log(chalk.blue(`Server running on http://localhost:${port}`));
   });
 });
 
