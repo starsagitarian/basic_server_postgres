@@ -3,7 +3,6 @@ import { Title } from '../models/Title';
 
 export const getAllTitles = async (req: Request, res: Response) => {
     try {
-        console.log(req.body)
         const titles = await Title.findAll();
         res.status(200).json(titles);
     } catch (error) {
@@ -14,7 +13,6 @@ export const getAllTitles = async (req: Request, res: Response) => {
 
 export const getTitleByIsbn = async (req: Request, res: Response) => {
     try {
-        console.log(req.body)
         const title = await Title.findByPk(req.params.id);
         res.status(200).json(title);
     } catch (error) {

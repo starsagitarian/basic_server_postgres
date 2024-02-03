@@ -3,7 +3,6 @@ import { Format } from '../models/Format';
 
 export const getAllFormats = async (req: Request, res: Response) => {
     try {
-        console.log(req.body)
         const formats = await Format.findAll();
         res.status(200).json(formats);
     } catch (error) {
@@ -14,7 +13,6 @@ export const getAllFormats = async (req: Request, res: Response) => {
 
 export const getFormatById = async (req: Request, res: Response) => {
     try {
-        console.log(req.body)
         const format = await Format.findByPk(req.params.id);
         res.status(200).json(format);
     } catch (error) {
