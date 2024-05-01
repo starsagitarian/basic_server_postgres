@@ -29,8 +29,5 @@ Described below is the tech stack
 ### Sequelize ORM
 ### Typescript
 ### handlebars
-
-Testing
-
-...To be added
+### Testing with Mocha/Chai.js
 
